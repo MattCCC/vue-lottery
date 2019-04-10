@@ -1,0 +1,22 @@
+/*
+  Let's use some BS4 modules
+*/
+$navbar-nav-link-padding-x: 1rem !default;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/grid";
+
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/custom-forms";
+
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+@import "~bootstrap/scss/toasts";

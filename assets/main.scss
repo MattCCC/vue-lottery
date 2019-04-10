@@ -1,0 +1,156 @@
+@import "./bootstrap";
+
+ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar {
+  .navbar-brand {
+    transform: scale(0.2);
+    height: 30px;
+    top: -17px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+  }
+}
+
+
+.title {
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  color: #35495e;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 100px;
+  }
+}
+
+
+.subtitle {
+  font-weight: 300;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 42px;
+  }
+}
+
+
+.page {
+  @extend .container;
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .align-content-center;
+  text-align: center;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 80px;
+    text-align: left;
+    align-items: center;
+  }
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .1s;
+}
+
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+
+
+/* Squares Grid */
+.square-container {
+  .square {
+    user-select: none;
+
+    &.active {
+      background-color: #bde8f6;
+    }
+  }
+
+  /* 8 cols */
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    width: 510px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 700px;
+
+    .square {
+      height: 80px;
+      width: 80px;
+    }
+  }
+}
+
+.square-container.play {
+  .square {
+    cursor: pointer;
+    transition: 0.3 all ease;
+  }
+}
+
+.square-container.betslip {
+  justify-items: center;
+  padding: 0.3rem 0;
+  background-color: #f9f9f9;
+
+  .square {
+    font-size: 1.4rem;
+    border: 0;
+  }
+
+  &.won {
+    .square.active {
+      background-color: lightgreen;
+    }
+  }
+}
+
+.square-container.drawn-numbers {
+  $ball-colour: lighten(#bde8f6, 4%);
+  $ball-size: 50px;
+
+  .square {
+    height: $ball-size;
+    width: $ball-size;
+    font-size: 1.2rem;
+    left: -9999px;
+    transition: 1s left ease, 1.5s transform ease-in-out;
+    border-radius: 100%;
+    background: radial-gradient(circle at 25%, $ball-colour 0%, darken($ball-colour, 2%) 10%, darken($ball-colour, 4%) 20%, darken($ball-colour, 6%) 30%, darken($ball-colour, 10%) 50%, darken($ball-colour, 14%) 70%);
+    border: 0;
+
+    &.active {
+      left: 0;
+      transform: rotate(720deg);
+    }
+  }
+
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(calc(100% / var(--grid-12-columns) - var(--grid-gap-12-columns)), 50px)) !important;
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    width: 510px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 720px;
+  }
+}

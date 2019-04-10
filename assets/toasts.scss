@@ -1,0 +1,46 @@
+/* Customize toasts plugin */
+
+.toast-container {
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 200px;
+
+  .close {
+    text-shadow: none;
+    margin: 0 !important;
+    outline: 0;
+  }
+
+  .progress {
+    height: 2px !important;
+  }
+
+  .toast-icon {
+    display: none;
+  }
+}
+
+.toast-header {
+  float: right;
+  background: 0 0 !important;
+}
+
+.bg-danger + .toast-body {
+  background: #EF5350 !important;
+  color: #333;
+}
+
+.bg-info + .toast-body {
+  background: rgb(186, 228, 249) !important;
+  color: #333;
+}
+
+.bg-success + .toast-body {
+  background: #AED581 !important;
+  color: #333;
+}
+
+.toast-leave-active {
+  display: none !important;
+}
